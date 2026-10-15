@@ -143,19 +143,18 @@ console.log(5 * 3);</textarea>
 <footer>Hecho para aprender paso a paso · Practica un poco cada día ✨</footer>
 <script>
 
-  const titulo = document.getElementById("page-title");
-
-titulo.animate(
-  [
-    { transform: "translateX(0)" },
-    { transform: "translateX(100px)" }
-  ],
-  {
-    duration: 1100,
-    easing: "ease-out",
-    fill: "forwards"
-  }
-);
+const tabTitleButton = document.getElementById('tabTitleButton');
+if (tabTitleButton) {
+  let titleTimer = null;
+  tabTitleButton.addEventListener('click', () => {
+    if (titleTimer) clearInterval(titleTimer);
+    const originalTitle = document.title;
+    const frames = ['HTML · CSS · JavaScript', '· HTML · CSS · JavaScript', '·· HTML · CSS · JavaScript', '··· HTML · CSS · JavaScript'];
+    let frame = 0;
+    titleTimer = setInterval(() => {
+      document.title = frames[frame % frames.length];
+      frame++;
+}
 const cssColor = document.getElementById('cssColor');
 const cssSize = document.getElementById('cssSize');
 const cssDemo = document.getElementById('cssDemo');
