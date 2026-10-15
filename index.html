@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" href="js-logo.png" type="image/png">
-<title>JavaScript desde 0</title>
+<title>HTML · CSS · JavaScript desde 0</title>
 <style>
-:root{--bg:#0b1020;--panel:#121a2e;--panel2:#1f335e;--text:#eef3ff;--muted:#a8b5d1;--yellow:#f7df1e;--cyan:#65e6d6;--line:#2b3855;--pink:#ff83b7}
+:root{--bg:#0b1020;--panel:#121a2e;--panel2:#18233b;--text:#eef3ff;--muted:#a8b5d1;--yellow:#f7df1e;--cyan:#65e6d6;--line:#2b3855;--pink:#ff83b7}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 85% 0%,#202d4c 0,transparent 32%),var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 header{padding:64px 22px 44px;max-width:1100px;margin:auto}.eyebrow{color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem}
 h1{font-size:clamp(2.5rem,7vw,5rem);line-height:1.02;letter-spacing:-.05em;margin:14px 0 20px}h1 span{color:var(--yellow)}.intro{max-width:650px;color:var(--muted);font-size:1.15rem}
@@ -21,7 +21,7 @@ label{display:block;font-weight:700;margin:12px 0 5px}input,textarea,select{widt
 <body>
 <header>
   <div class="eyebrow">Guía interactiva · Nivel principiante</div>
-  <h1>JavaScript <span>desde 0.</span></h1>
+  <h1>JavaScript <span>desde cero.</span></h1>
   <p class="intro">Aprende los fundamentos de JavaScript con ejemplos cortos, un pequeño espacio para probar código y un test final. No necesitas experiencia previa.</p>
   <div class="actions"><a class="btn primary" href="#variables">Empezar a aprender ↓</a><a class="btn" href="#practica">Probar código</a></div>
   <div class="progress" aria-label="Progreso del test"><span id="progress"></span></div>
@@ -29,9 +29,52 @@ label{display:block;font-weight:700;margin:12px 0 5px}input,textarea,select{widt
 <div class="layout">
 <nav aria-label="Contenido">
 <strong>En esta guía</strong>
-<a href="#variables">01 · Variables</a><a href="#tipos">02 · Tipos de datos</a><a href="#condiciones">03 · Condiciones</a><a href="#bucles">04 · Bucles</a><a href="#funciones">05 · Funciones</a><a href="#arrays">06 · Arrays</a><a href="#practica">Laboratorio</a><a href="#test">Test final</a>
+<a href="#html">HTML · Estructura</a><a href="#css">CSS · Diseño</a><a href="#javascript-intro">JavaScript · Introducción</a><a href="#variables">JS · Variables</a><a href="#tipos">JS · Tipos de datos</a><a href="#condiciones">JS · Condiciones</a><a href="#bucles">JS · Bucles</a><a href="#funciones">JS · Funciones</a><a href="#arrays">JS · Arrays</a><a href="#practica">Laboratorio JS</a><a href="#test">Test final</a>
 </nav>
 <main>
+
+<section class="card" id="html"><div class="num">MÓDULO 01 / HTML</div><h2>HTML: la estructura de la página</h2>
+<p>HTML significa <em>HyperText Markup Language</em>. Define la estructura del contenido: títulos, párrafos, imágenes, enlaces y listas.</p>
+<pre>&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;¡Hola, web!&lt;/h1&gt;
+    &lt;p&gt;Estoy aprendiendo HTML.&lt;/p&gt;
+    &lt;a href="https://example.com"&gt;Un enlace&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+<div class="grid2"><div class="mini"><h3 class="yellow">Etiquetas comunes</h3><p><code>&lt;h1&gt;</code> título · <code>&lt;p&gt;</code> párrafo · <code>&lt;a&gt;</code> enlace · <code>&lt;img&gt;</code> imagen · <code>&lt;ul&gt;</code> lista.</p></div><div class="mini"><h3 class="yellow">Atributos</h3><p>Aportan información adicional. <code>href</code> indica el destino de un enlace y <code>src</code> la ruta de una imagen.</p></div></div>
+<div class="callout">HTML estructura el contenido; CSS define el aspecto y JavaScript añade comportamiento interactivo.</div></section>
+
+<section class="card" id="css"><div class="num">MÓDULO 02 / CSS</div><h2>CSS: dale estilo a tu web</h2>
+<p>CSS significa <em>Cascading Style Sheets</em>. Controla colores, tipografías, espacios, bordes y distribución. Una regla combina un selector con declaraciones.</p>
+<pre>h1 {
+  color: #f7df1e;
+  font-size: 2rem;
+}
+
+.tarjeta {
+  background: #18233b;
+  padding: 20px;
+  border-radius: 12px;
+}</pre>
+<div class="grid2"><div class="mini"><h3 class="yellow">Selectores</h3><p><code>h1</code> selecciona los títulos h1. <code>.tarjeta</code> selecciona los elementos con esa clase.</p></div><div class="mini"><h3 class="yellow">Propiedades</h3><p><code>color</code>, <code>background</code>, <code>font-size</code>, <code>margin</code> y <code>padding</code> son propiedades habituales.</p></div></div>
+<h3>Prueba el estilo</h3><p class="muted">Cambia el color y el tamaño para ver cómo CSS modifica el aspecto del elemento.</p>
+<label for="cssColor">Color del título</label><input type="color" id="cssColor" value="#f7df1e">
+<label for="cssSize">Tamaño del título</label><input type="range" id="cssSize" min="20" max="56" value="32">
+<div class="mini" style="margin-top:14px"><h2 id="cssDemo" style="color:#f7df1e;font-size:32px;margin:0 0 6px">¡Hola, CSS!</h2><p style="margin:0">Este contenido HTML tiene estilo CSS.</p></div>
+<p class="muted">Lo habitual es guardar CSS en <code>styles.css</code> y conectarlo dentro de <code>&lt;head&gt;</code> con <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>.</p></section>
+
+<section class="card" id="javascript-intro" style="text-align:center;background:linear-gradient(135deg,#202a43,#121a2e);border-color:#f7df1e">
+  <div class="num">MÓDULO 03</div>
+  <h2 style="font-size:2rem;margin:8px 0">JavaScript</h2>
+  <p class="muted" style="margin:0">Interactividad y lógica · Aprende a dar vida a tus páginas web</p>
+</section>
+
 <section class="card" id="variables"><div class="num">01 / FUNDAMENTOS</div><h2>Variables: guardar información</h2><p>Una variable es un nombre que usamos para guardar un valor. En JavaScript moderno, utiliza <code class="yellow">const</code> si no vas a reasignar el valor y <code class="yellow">let</code> si necesitas cambiarlo.</p>
 <pre><span class="cyan">const</span> nombre = "Alex";
 <span class="cyan">let</span> puntos = 10;
@@ -97,8 +140,17 @@ console.log(5 * 3);</textarea>
 <div class="quiz-q"><p>4. ¿Qué instrucción devuelve un valor desde una función?</p><label><input type="radio" name="q4" value="a"> print</label><label><input type="radio" name="q4" value="b"> return</label><label><input type="radio" name="q4" value="c"> console</label></div>
 <button class="run" type="submit">Corregir test</button><div class="feedback" id="feedback" aria-live="polite"></div></form></section>
 </main></div>
-<footer>Creado por Sergio Navarro Miralles - 1º ASIR</footer>
+<footer>Hecho para aprender paso a paso · Practica un poco cada día ✨</footer>
 <script>
+const cssColor = document.getElementById('cssColor');
+const cssSize = document.getElementById('cssSize');
+const cssDemo = document.getElementById('cssDemo');
+function updateCssDemo() {
+  cssDemo.style.color = cssColor.value;
+  cssDemo.style.fontSize = cssSize.value + 'px';
+}
+cssColor.addEventListener('input', updateCssDemo);
+cssSize.addEventListener('input', updateCssDemo);
 const editor = document.getElementById('editor');
 const output = document.getElementById('output');
 document.getElementById('run').addEventListener('click', () => {
